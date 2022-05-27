@@ -1,0 +1,66 @@
+frontend / client / react app
+https://reactjs.org/
+
+    go to view/word wrap to force the entirety of a line top be visible in VS Code
+
+/*following is already complete
+npx create-react-app frontend  
+I believe you need node to create and run a react app
+
+        generates in frontend folder
+        nodemodules
+        public
+        scr
+        gitignore
+        two package .json files
+*/
+
+I might make the root folder a node app to be able to run frontend and backend at the same time or it could be done another way
+We can add scripts to automate running the frontend and backend at the same time
+
+
+inside fontend folder 
+        npm i react-router-dom  // for routing to different pages i nthe frontend
+        npm i react-icons       // to be able to use icons < https://react-icons.github.io/react-icons/icons?name=fa >
+        npm i axios             // create HTTP requests /connection to backend
+        npm i react-toastify    // for error messages to display / show alerts
+        npm i redux             // installs redex toolkit
+
+    can also use    npm install <module/library>    to install a dependency
+
+    can also use    npm install   by itself to install all dependancies found in the package.json file
+
+    to get rid of a module
+    npm uninstall <name of thing you don't want>
+
+more dependencies will be added as you go, when you add a dependancy it automatically adds
+
+running app 
+npm run start -- in frontend folder - opends your browser
+
+app.js contains main code
+    added pages folder in src to hold different pages
+
+I've also started by setting up a basic header and routing top differnt pages
+
+Lots will change as we go
+
+
+
+A little about react
+https://github.com/ChaceN89/Aviar Chaces last project front end uses react to see examples if you find that useful
+
+a basic file thats can use javascript and returns html elements
+need to use <> </> to enclose everything sometimes
+
+import React from 'react'
+function header() {
+  return (
+    <div>header</div>  // html elemtnts top return to the caller
+  )
+}
+export default header // export of the fucntions you want to use
+
+in other file call <header/> like it is an html elements
+
+you can also use CSS modules to make files contains just specific css
