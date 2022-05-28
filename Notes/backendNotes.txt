@@ -1,0 +1,82 @@
+backend
+
+https://realpython.com/django-setup/ is helpful for commands to set up a project
+https://www.youtube.com/watch?v=mUPQii90K5A 
+
+https://jacobsood.medium.com/integrating-mongodb-atlas-with-django-using-djongo-962dfd1513eb for mongodb Atlas conenction
+
+https://www.mongodb.com/community/forums/t/keep-getting-serverselectiontimeouterror/126190/13
+for encyrption error on windows with connecting to MongdoDB atlas, your system won't let it connect
+
+    Download https://letsencrypt.org/certs/lets-encrypt-r3.pem 726
+    rename file .pem to .cer
+    double click and install
+    and then try to run app your SSL issue will resolved. Cheers !!!
+
+    certifi==2022.5.18.1 is a library that im pretty sure doesn't help the issue but some people said to try it but the first method should allow the database to connect
+
+Migrate is a command for the database not 100% sure what it does, and it shouldn't be needed much
+python manage.py migrate
+
+
+
+Actual Set up
+
+
+    need to set up a virtual enviroment in in the root folder 
+        (your could also set up the virtual envirometn elsewhere)
+
+    use    python3 -m venv venv   to make one called venv
+    0r use    py -m venv venv    other ways to make a vitrial enviroment also exist
+
+    it needs to be called venv so the gitignore recognizes it
+
+    to activae run venv/Scripts/activate from the root folder
+    you may neede to change execution policy to run Scripts
+    I used the command 
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    and then I could avctive the enviroment
+
+    once activated the command line should look like this
+    (venv) PS C:\Users\chace\ ....
+
+    then isntall django 
+        py -m pip install django (other commands exist as well)
+        shoul dbe able to drop the py -m part at begining
+        also can use python instead of py
+
+    Generate a requirements document
+        python -m pip freeze > requirements.txt 
+
+    initally requirements.txt contains the following libraries
+        asgiref==3.5.2
+        Django==4.0.4
+        sqlparse==0.4.2
+        tzdata==2022.1
+
+    In react the modules folder acts similar to the virtual enviroment
+    and the package.json is similar to the requirements.txt  file
+    except the requirements.txt needs to be manulally generated to keep the used modules up to date
+
+    you can install specific verison of a library/dependancy with 
+        python -m pip install django==2.2.11 if you wanted a older verison of django
+
+    If the requirements.txt already exists for example if cloning from github
+    you can install all the dependancies with
+        python -m pip install -r requirements.txt
+    make sure your virtual enviroment is activated before installing dependancies
+    run this command fromthe folder containing the requirements.txt file
+
+
+    creating a django project from the backend folder
+    django-admin startproject api .
+
+    python manage.py runserver
+
+    //will need to set up apps to make it work
+
+
+
+
+possibility to use poetry 
+for setting up a virtual enviroment instead of pip
