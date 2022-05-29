@@ -65,6 +65,8 @@ SoundCloud Clone with additional features
     - python -m pip freeze > requirements.txt
 
     ***After installing a libray/dependancy always run the above command***
+    
+    add your .env file to the config folder
 
     You should be able to run the backend with
     - python manage.py runserver
