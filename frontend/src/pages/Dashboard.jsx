@@ -1,8 +1,14 @@
 import React from 'react'
+import MusicLoader from '../components/loaders/MusicLoader'
+
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div><br></br>Dashboard
+      <div>
+        <MusicLoader/>
+      </div>
+    </div>
   )
 }
 
