@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
+# enviroment vaiables
+import environ
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-*mmtz)gf!jlwu7rtqq=#5%g+ezvf$-h4np25qiq8x$up022k#&'
+# SECRET_KEY = 'django-insecure-*mmtz)gf!jlwu7rtqq=#5%g+ezvf$-h4np25qiq8x$up022k#&'
+SECRET_KEY = env("SECRET_KEY")
+
+# could also do enviroment variables this way
+    # import os
+    # SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -76,11 +87,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'MusicAppDatabase', # database name
+        'NAME': env("DATABASE_NAME"), # database name
         'CLIENT': {
-            'host': 'mongodb+srv://karCloud:klesser@musicapp.i6ucceo.mongodb.net/?retryWrites=true&w=majority',
-            'username': 'karCloud',
-            'password': 'klesser',
+            'host': env("MONGO_URI"),
+            'username': env("DATABASE_USER"),
+            'password': env("DATABASE_PASS"),
         }
     }
 }
