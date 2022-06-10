@@ -17,8 +17,19 @@ export function Counter() {
 
   const incrementValue = Number(incrementAmount) || 0;
 
+
+  const {
+    value,
+    status,
+  } = useSelector(state => state.counter)
+
+
   return (
     <div>
+      <div>
+        {value}
+        {status}
+      </div>
       <div className={styles.row}>
         <button
           className={styles.button}
