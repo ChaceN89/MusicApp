@@ -24,5 +24,8 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url('about/', views.about),
     url('users/', include("users.urls")),
+    url('songs/', include("songs.urls")),
+    url('playlists/', include("playlists.urls")),
+    url('searches/', include("searches.urls")),
     url(r'^', views.homepage),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
