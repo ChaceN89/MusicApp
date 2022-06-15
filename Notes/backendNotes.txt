@@ -71,11 +71,20 @@ Actual Set up
     creating a django project from the backend folder
     django-admin startproject api .
 
-    python manage.py runserver
+    Start Django server:
+        python manage.py runserver
 
-    //will need to set up apps to make it work
+    Set up new apps:
+        python manage.py startapp appName
 
+    When a change is made to the models of the database
+    the database must be updated using migrations.
 
+    First migrations must be created for all pending changes using:
+        python manage.py makemigrations
+
+    Secondly the migrations can be implemented in the database with the following:
+        python manage.py migrate
 
 
 possibility to use poetry 
