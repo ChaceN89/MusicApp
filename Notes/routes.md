@@ -3,6 +3,7 @@
 ### Table of Contents
 
 - [Information](#information)
+- [Test Routes](#test-routes)
 - [User Routes](#user-routes)
 - [Song Routes](#song-routes)
 - [Saved Song Routes](#saved-song-routes)
@@ -44,6 +45,45 @@ logout doens't need a route its just removing the authporization token from cook
 
 
 
+## ***Test Routes*** 
+
+<font color="green">&nbsp;&nbsp;&nbsp;&nbsp; *api/user/...*
+</font>
+<font color="lightblue">
+
+<!-- Test Route -->
+<details><summary>Test Route </summary> 
+<br>
+
+#### Test backend - public 
+    GET .../api/test
+	-Fields: none
+	-Authorization: No
+	-Returns: {"message": "Welcome"}
+    -Other info: N/A
+<br>
+</details>
+
+<!-- Test Route Timed -->
+<details><summary>Timed Test Route </summary> 
+<br>
+
+#### Test backend with timed response - public 
+    GET .../api/test/:delay
+	-Fields: 
+	-Authorization: No
+	-Returns: {"message": "Delayed Hello of  {delay} seconds"}
+    -Other info: dleay is the number of seconds for backend to sleep before returning
+<br>
+</details>
+
+
+
+ </font>
+
+
+
+
 
 
 
@@ -58,16 +98,18 @@ logout doens't need a route its just removing the authporization token from cook
 
 <!-- Get Current User -->
 <details><summary>Get Current User </summary> 
+<br>
 
 #### Get current user info - Private 
     GET .../api/user/me
 	-Fields: none
 	-Authorization: Yes
 	-Returns: TBD
+    -Other info: N/A
 <br>
 </details>
 
-<!-- Template -->
+<!-- Register -->
 <details><summary>Register</summary>
 <br>
 
@@ -76,6 +118,7 @@ logout doens't need a route its just removing the authporization token from cook
 	-Fields: username, password, email, fname, lname, 
 	-Authorization: none
 	-Returns: TBD
+    -Other info: N/A
 <br>
 </details>
 
@@ -89,6 +132,7 @@ logout doens't need a route its just removing the authporization token from cook
 	-Fields: username, password 
 	-Authorization: none
 	-Returns: TBD
+    -Other info: N/A
 <br>
 </details>
 
@@ -116,10 +160,11 @@ logout doens't need a route its just removing the authporization token from cook
 <br>
 
 #### Description of the Route - Public/Private
-	POST .../api/...
-	-Fields: ... 
+	POST/GET/PUT/DELETE .../api/.../:id
+	-Fields: ... lname
 	-Authorization: ...
 	-Returns: TBD
+    -Other info: description of parameters in in actual route (/:id) or in fields (lname)
 <br>
 </details>
 
@@ -218,9 +263,10 @@ Add Route template Here
 <br>
 
 #### Description of the Route - Public/Private
-	POST/GET/PUT/DELETE .../api/...
-	-Fields: ... 
+	POST/GET/PUT/DELETE .../api/.../:id
+	-Fields: ... lname
 	-Authorization: ...
 	-Returns: TBD
+    -Other info: description of parameters in in actual route (/:id) or in fields (lname)
 <br>
 </details>
